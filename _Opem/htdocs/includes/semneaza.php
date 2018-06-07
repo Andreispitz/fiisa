@@ -22,7 +22,7 @@ if (isset($_POST['submit'])){
 				exit();
 				} else{
 				//Verificam unicitatea email
-				$sql = "SELECT * FROM semnaturi WHERE trim(email) = '$email'";
+				$sql = "SELECT * FROM semnaturi WHERE email = '$email'";
 				$result = mysqli_query($conn,$sql);
 				$resultCheck = mysqli_num_rows($result);
 
@@ -32,7 +32,7 @@ if (isset($_POST['submit'])){
                       }
                       else{
 
-							$sql = "INSERT INTO semnaturi (nume,prenume,email,id_petitie) VALUE ('$first', '$last', '$email','$idp');";
+							$sql = "INSERT INTO semnaturi (nume,prenume,email,id_petitie) VALUE ('$first', '$resultCheck', '$email','$idp');";
 							mysqli_query($conn, $sql);
 							$sql1="UPDATE petitii SET nr_semnaturi = 1+nr_semnaturi WHERE ID='$idp';";
 							mysqli_query($conn, $sql1);
