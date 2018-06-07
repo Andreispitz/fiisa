@@ -1,7 +1,12 @@
 <?php
 include 'db_connection.php';
 
-$result = mysqli_query($conn,"SELECT * FROM petitii order by data_c desc");
+if(isset($_GET['page']))
+    $page=$_GET['page'];
+else
+	$page=1;
+$number=($page*5)-5;
+$result = mysqli_query($conn,"SELECT * FROM petitii  limit $number,5");
 while($row = mysqli_fetch_array($result))
 {
 

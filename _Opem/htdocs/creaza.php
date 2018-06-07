@@ -44,8 +44,10 @@
     
 <div class="despre">
 <div class="cautare">
-      <form>
-          <input id="input1" type="text" placeholder="..Cauta.." name="cauta">
+      <form  action="cauta.php" method="get">
+          <span><input id="input1" type="text" placeholder="..Cauta.." name="cauta">
+          <input type="submit" name="submit" value="Cauta" />
+          </span>
       </form>
    </div>
 <h3 id="topp">Top petitii</h3>

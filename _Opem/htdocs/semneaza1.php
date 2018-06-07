@@ -3,7 +3,7 @@
 ?>
 
 <div class="all">
-	<img class="petitie-background" src="img/logo3.jpg">
+	<img class="petitie-background" src="logo3.jpg">
 	
 
 	<div class="chenar-petitie">
@@ -22,9 +22,11 @@
 <div class="despre">
 
 <div class="cautare">
-    	<form action="" method="post">
-      		<input id="input1" type="text" placeholder="..Cauta.." name="cauta">
-    	</form>
+    	<form  action="cauta.php" method="get">
+          <span><input id="input1" type="text" placeholder="..Cauta.." name="cauta">
+          <input type="submit" name="submit" value="Cauta" />
+          </span>
+      </form>
  	 </div>
 
 					<form action="includes/semneaza.php" method="post">

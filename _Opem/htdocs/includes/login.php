@@ -35,7 +35,8 @@ if (isset($_POST['submit'])){
 					$_SESSION['u_email'] = $row['user_email'];
 					$_SESSION['u_uid'] = $row['user_uid'];
 
-					header("Location: ../logare.php?login=succes");
+					//header("Location: ../logare.php?login=succes");
+					header("Location: ../contul_meu.php");
 					exit();
 				}
 			}

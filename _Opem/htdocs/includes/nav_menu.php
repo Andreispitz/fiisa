@@ -27,7 +27,7 @@
 					<a href="toatep.php">PETITII</a>
 				</li>
 				<li>
-					<a href="logare.php">CONTUL MEU</a>
+					<a href="contul_meu.php">CONTUL MEU</a>
 				</li>
 
 		</ul>
