@@ -15,7 +15,11 @@
 			<?php 
 		include_once 'includes/deschide_pagina_petitie.php';
 	?>
-			
+		  
+      <?php 
+    include_once 'includes/form_raporteaza.php';
+  ?>	
+      
 		
 		</div>
 		
@@ -28,7 +32,7 @@
           </span>
       </form>
  	 </div>
-
+<H3>SEMNEAZA</H3>
 					<form action="includes/semneaza.php" method="post">
 <ul class="chestionar1">
     <li><label>Nume | Prenume<span class="required">*</span></label><input type="text" name="nume" class="field-divided" placeholder="Prenume" />&nbsp;<input type="text" name="prenume" class="field-divided" placeholder="Nume" /></li>
@@ -44,34 +48,9 @@
 </ul>
 </form>
 
-		<h3>Aici o sa vedem ce adaugam la urma sa arate bine</h3>
-		<h3 id="topp">Vezi si</h3>
-		<table id="table1">
-  <tr class="topt">
-    <th>Titlu</th>
-    <th>Semnaturi</th>
-  </tr>
-  <tr>
-    <td><a href="...">Impotriva Abuzului</a></td>
-    <td>5000</td>
-  </tr>
-  <tr>
-    <td><a href="...">Impotriva BLABLA</a></td> 
-    <td>940</td>
-  </tr>
-  <tr>
-    <td><a href="...">Impotriva BLABLA</a></td> 
-    <td>940</td>
-  </tr>
-  <tr>
-    <td><a href="...">Impotriva BLABLA</a></td> 
-    <td>940</td>
-  </tr>
-  <tr>
-    <td><a href="...">Impotriva BLABLA</a></td> 
-    <td>940</td>
-  </tr>
-</table>
+
+		<h3>TOP SEMNATURI</h3>
+	<?php	include 'includes/top_semnaturi.php'; ?>
 		</div>
 
 	</div>

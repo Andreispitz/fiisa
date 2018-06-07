@@ -18,7 +18,8 @@
 					echo"<p class='text_petitie'>". $row['text_petitie'] ."</p>";
 			       echo" <p class='nr_semnaturi'> SEMNATURI:".$row['nr_semnaturi']."</p>
 						<form class='forma_buton' method='get' action=''>";
-						echo"<button type='submit' class='catre_semneaza'>Distribuie</button> </form>
+						echo"<button type='submit' class='catre_semneaza'>Distribuie</button> </form>";
+					echo"<a href='semneaza1.php?id=".$idp."&raporteaza=1"."'>raporteaza</a>
 					</article>";
 
 				}
