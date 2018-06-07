@@ -1,38 +1,64 @@
 <!--Pentru fiecare camp se aplica functia de validare cu cei 2 parametri
-numele inputlui si id-ul span-ului -->
+numele inputului si id-ul span-ului -->
 <script src="includes/schimbareParola.js"></script>
     <?php 
         include_once 'includes/nav_menu.php';
     ?>
 	
 	<div class="contul-meu">
-        <p style="float:right">Bine ai venit, <?php echo $_SESSION['u_uid'];?> </p>
+        <p id="welcome">Bine ai venit, <?php echo $_SESSION['u_uid'];?> </p>
 
         <h2>Setarile contului</h2>
 
-            <button onclick="schimbare_parola()">Schimbare parola</button>
+            <button class="modificari" onclick="schimbare_parola()">Schimbare parola</button>
             <div id="schimbare_parola" style="display: none">
                 <form action="includes/schimbare_parola.php" method="POST" name="parola_noua">
                     <ul>
                         <li>Parola curenta:</li>
-                        <input type="password" name="currentPass" onblur="validare_camp('currentPass', 'field1')">
+                        <input class="input-acc" type="password" name="currentPass" onblur="validare_camp('parola_noua', 'currentPass', 'field1')">
                         <span id="field1"></span>
 
                         <li>Parola noua:</li>
-                        <input type="password" name="newPass" onblur="validare_camp('newPass', 'field2')">
+                        <input class="input-acc" type="password" name="newPass" onblur="validare_camp('parola_noua', 'newPass', 'field2')">
                         <span id="field2"></span>
 
                         <li>Confirmare parola noua:</li>
-                        <input type="password" name="confirmNewPass" onblur="validare_camp('confirmNewPass', 'field3')">
+                        <input class="input-acc" type="password" name="confirmNewPass" onblur="validare_camp('parola_noua', 'confirmNewPass', 'field3')">
                         <span id="field3"></span>
 
                         <br>
-                        <button type="submit" name="submit">Modifica</button>
+                        <button class="buton-submit" type="submit" name="submit">Modifica</button>
                     </ul>
                 </form>
             </div>
 
-            <button>Date</button>
+
+            <br>
+            <br>
+            <button class="modificari" onclick="setarile_profilului()">Setarile profilului</button>
+            <div id="setari_profil" style="display: none">
+                <form action="includes/modificare_profil.php" method="POST" name="modificari_profil">
+                    <ul>
+                        <li>Email:</li>
+                        <input class="input-acc" type="text" name="email" value = <?php echo $_SESSION['u_email'] ?> onblur="validare_camp('modificari_profil','email','field4')">
+                        <span id="field4"></span>
+
+                        <li>Nume:</li>
+                        <input class="input-acc" type="text" name="nume" value = <?php echo $_SESSION['u_first'] ?> onblur="validare_camp('modificari_profil','nume','field5')">
+                        <span id="field5"></span>
+
+                        <li>Prenume:</li>
+                        <input class="input-acc" type="text" name="prenume" value = <?php echo $_SESSION['u_last'] ?> onblur="validare_camp('modificari_profil','prenume','field6')">
+                        <span id="field6"></span>
+
+                        <br>
+                        <button class="buton-submit" type="submit" name="submit">Salveaza modificarile</button>
+
+                    </ul>
+                </form>
+
+
+            </div>
 
 
         <div>

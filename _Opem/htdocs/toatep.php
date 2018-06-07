@@ -37,10 +37,33 @@
       </form>
  	 </div>
 
-<h3 id="topp">Top SEMNATURI</h3>
-		<?php
-        include 'includes/top_semnaturi.php';
-      ?>
+<h3 id="topp">Top petitii</h3>
+		<table id="table1">
+  <tr class="topt">
+    <th>Titlu</th>
+    <th>Semnaturi</th>
+  </tr>
+  <tr>
+    <td><a href="...">Impotriva Abuzului</a></td>
+    <td>5000</td>
+  </tr>
+  <tr>
+    <td><a href="...">Impotriva BLABLA</a></td> 
+    <td>940</td>
+  </tr>
+  <tr>
+    <td><a href="...">Impotriva BLABLA</a></td> 
+    <td>940</td>
+  </tr>
+  <tr>
+    <td><a href="...">Impotriva BLABLA</a></td> 
+    <td>940</td>
+  </tr>
+  <tr>
+    <td><a href="...">Impotriva BLABLA</a></td> 
+    <td>940</td>
+  </tr>
+</table>
 
 		</div>
 
