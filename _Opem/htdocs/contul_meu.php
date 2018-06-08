@@ -88,7 +88,9 @@ numele inputului si id-ul span-ului -->
                         echo"<p class='text_petitie'>". $row['text_petitie'] ."</p>";
                        echo" <p class='nr_semnaturi'> SEMNATURI:".$row['nr_semnaturi']."</p>
                             <form class='forma_buton' method='get' >
-                            <a class='catre_semneaza' href='semneaza1.php?id=".$row['ID']."'> Citeste mai mult </a> </form>
+                            <a class='catre_semneaza' href='semneaza1.php?id=".$row['ID']."'> Citeste mai mult </a>
+                            <hr>
+                            <a class='catre_semneaza' href='includes/sterge_petitie.php?id=".$row['ID']."&uid=".$_SESSION['u_id']."'> Sterge </a> </form>
                     </article>";
                 }
             ?>
