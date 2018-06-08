@@ -6,6 +6,7 @@ if (isset($_POST['submit'])){
 	$first = mysqli_real_escape_string($conn, $_POST['nume']);
 	$last = mysqli_real_escape_string($conn, $_POST['prenume']);
 	$email = mysqli_real_escape_string($conn, $_POST['email']);
+	$mesaj = mysqli_real_escape_string($conn, $_POST['mesaj']);
 	$idp=mysqli_real_escape_string($conn, $_POST['idp']);
 	if (empty($first) || empty($last) || empty($email)){
 		header("Location: ../creare_cont.php?signup=empty");
@@ -32,7 +33,7 @@ if (isset($_POST['submit'])){
                       }
                       else{
 
-							$sql = "INSERT INTO semnaturi (nume,prenume,email,id_petitie) VALUE ('$first', '$resultCheck', '$email','$idp');";
+							$sql = "INSERT INTO semnaturi (nume,prenume,email,id_petitie,mesaje) VALUE ('$first', '$last', '$email','$idp','$mesaj');";
 							mysqli_query($conn, $sql);
 							$sql1="UPDATE petitii SET nr_semnaturi = 1+nr_semnaturi WHERE ID='$idp';";
 							mysqli_query($conn, $sql1);

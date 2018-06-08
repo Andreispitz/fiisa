@@ -19,6 +19,9 @@
       <?php 
     include_once 'includes/form_raporteaza.php';
   ?>	
+  <?php 
+    include_once 'includes/generare_mesaje_semnaturi.php';
+  ?>	
       
 		
 		</div>
@@ -39,6 +42,10 @@
     <li>
         <label>Email <span class="required">*</span></label>
         <input type="email" name="email" class="field-long" />
+    </li>
+    <li>
+        <label>Comentariu</label>
+        <textarea  id='field5' name='mesaj' class='field-long field-textarea'></textarea>
     </li>
     
     <li>
