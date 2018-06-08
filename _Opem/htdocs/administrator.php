@@ -15,8 +15,6 @@
 
   include_once 'includes/db_connection.php';
 
-  $query = "SELECT * FROM petitii";
-  $result = mysqli_query($conn,$query);
 
   $sql = "SELECT * FROM petitii WHERE ID = '$id'";
   $result2 = mysqli_query($conn,$sql);
@@ -40,147 +38,70 @@
 		<div class="meniu-admin">
 		<h2 class="ultimele-petitii">Raport</h2>
 
-    <form action="" method="POST">
-      <select id="meniu-adm" name="petitie">
-        <option value="">Selecteaza Petitia</option>
-        
-        <?php while($row = mysqli_fetch_array($result)){
+<form action="includes/generare_pdf.php" method="POST">
+      <span><select id="meniu-adm" name="petitie">
+        <option value="">Raport  pentru:</option>
+        <option value="">Toate petitiile</option>
+        <?php 
+           $query_c = "SELECT * FROM petitii";
+           $result_c = mysqli_query($conn,$query_c);
+        while($row = mysqli_fetch_array($result_c)){
           echo '<option value = "' . $row['ID'] .'">' . $row['titlu_petitie'] . '</option>';
         } 
-
+          mysqli_close($conn);
          ?>
       </select>
-      <input type="submit" name="submit" value="Afiseaza">
+      <input type="checkbox" name="PDF" value="1"> PDF</input>
+      <input type="checkbox" name="HTML" value="1"> HTML</input></span>
+      <input type="submit" name="submit" value="Genereaza">
     </form>
 
+
+<hr>
 
 			
 			</div>
 				<div class="chenar-administrator">
-<article class="petitie">
-			<h3 class ="titlu_petitie"><?php echo $row2['titlu_petitie'];?></h3>
-			<p class="autor">Scris de <?php echo $row3['user_uid']?></p>
-			<p class="destinatar">Catre <?php echo $row2['destinatar']?> </p>
-			
-    <div>
-			<p class="text_petitie">
+        <h2 class="ultimele-petitii">selectare petitie</h2>
 
+<form action="" method="POST">
+      <select id="meniu-adm" name="petitie">
+        <option value="">Selectare:</option>
         <?php 
-          echo $row2['text_petitie'];
-      ?>
-			</p> 
-    </div>
-			
-			<p class="nr_semnaturi"> SEMNATURI:<?php echo $row2['nr_semnaturi']?></p>
+             $query = "SELECT * FROM petitii";
+             $result = mysqli_query($conn,$query);
+        while($row = mysqli_fetch_array($result)){
+          echo '<option value = "' . $row['ID'] .'">' . $row['titlu_petitie'] . '</option>';
+        } 
+         ?>
+      </select>
+      <input type="submit" name="submit" value="Afiseaza">
+      </form>
 
-			<p class="data"> data crearii: <?php echo $row2['data_C']?></p>
-			<p class="data"> data expirarii:<?php echo $row2['data_e']?> </p>
-			<p class="data"> numar raportari:<?php echo $row2['raportari']?></p>
-			<form class ="forma_buton" method="get" action="semneaza.html">
-				<button type="submit" class="catre_semneaza"> sterge</button> </form>			</div>
-		
-		
+<br>
 
-	</article>
-		
+		</div>
 		</div>
 		
 <div class="despre">
 
 
-				<div class="cautare">
-    	<form>
-      		<input id="input1" type="text" placeholder="..Cauta.." name="cauta">
-    	</form>
- 	 </div>
-
+			<div class="cautare">
+      <form  action="cauta.php" method="get">
+          <span><input id="input1" type="text" placeholder="..Cauta.." name="cauta">
+          <input type="submit" name="submit" value="Cauta" />
+          </span>
+      </form>
+   </div>
 		<h3 id="topp">Top petitii semnate</h3>
-		
-  <table id="table1">
-  <tr class="topt">
-    <th>Titlu</th>
-    <th>Semnaturi</th>
-  </tr>
-  <tr>
-    <td><a href="...">Impotriva Abuzului</a></td>
-    <td>5000</td>
-  </tr>
-  <tr>
-    <td><a href="...">Impotriva BLABLA</a></td> 
-    <td>940</td>
-  </tr>
-  <tr>
-    <td><a href="...">Impotriva BLABLA</a></td> 
-    <td>940</td>
-  </tr>
-  <tr>
-    <td><a href="...">Impotriva BLABLA</a></td> 
-    <td>940</td>
-  </tr>
-  <tr>
-    <td><a href="...">Impotriva BLABLA</a></td> 
-    <td>940</td>
-  </tr>
-</table>
+		<h3>TOP SEMNATURI</h3>
+  <?php include 'includes/top_semnaturi.php'; ?>
 
 
 <h3 id="topp">Top petitii raportate</h3>
-		
-  <table id="table1">
-  <tr class="topt">
-    <th>Titlu</th>
-    <th>Semnaturi</th>
-  </tr>
-  <tr>
-    <td><a href="...">Impotriva Abuzului</a></td>
-    <td>5000</td>
-  </tr>
-  <tr>
-    <td><a href="...">Impotriva BLABLA</a></td> 
-    <td>940</td>
-  </tr>
-  <tr>
-    <td><a href="...">Impotriva BLABLA</a></td> 
-    <td>940</td>
-  </tr>
-  <tr>
-    <td><a href="...">Impotriva BLABLA</a></td> 
-    <td>940</td>
-  </tr>
-  <tr>
-    <td><a href="...">Impotriva BLABLA</a></td> 
-    <td>940</td>
-  </tr>
-</table>
+  <?php include 'includes/top_raportari.php'; ?>
 
-<h3 id="topp">Ultimele petitii adaugate</h3>
 		
-  <table id="table1">
-  <tr class="topt">
-    <th>Titlu</th>
-    <th>Semnaturi</th>
-  </tr>
-  <tr>
-    <td><a href="...">Impotriva Abuzului</a></td>
-    <td>5000</td>
-  </tr>
-  <tr>
-    <td><a href="...">Impotriva BLABLA</a></td> 
-    <td>940</td>
-  </tr>
-  <tr>
-    <td><a href="...">Impotriva BLABLA</a></td> 
-    <td>940</td>
-  </tr>
-  <tr>
-    <td><a href="...">Impotriva BLABLA</a></td> 
-    <td>940</td>
-  </tr>
-  <tr>
-    <td><a href="...">Impotriva BLABLA</a></td> 
-    <td>940</td>
-  </tr>
-</table>
 		</div>
 
 	</div>

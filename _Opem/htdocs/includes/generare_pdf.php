@@ -1,4 +1,5 @@
 <?php 
+if (isset($_POST['PDF'])){
 include_once('fpdf/fpdf.php');
 include 'db_connection.php';
 
@@ -16,4 +17,10 @@ $pdf->Cell(400,10,$titlu);
 }
 mysqli_close($conn);
 $pdf->Output();
+
+}else
+echo "HTML RAPORT";
+
+
+
 ?>

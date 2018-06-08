@@ -8,6 +8,15 @@ numele inputului si id-ul span-ului -->
 	<div class="contul-meu">
         <p id="welcome">Bine ai venit, <?php echo $_SESSION['u_uid'];?> </p>
 
+        <!-- Daca adminul este logat atunci ...-->
+        <?php 
+
+            if ($_SESSION['u_admin'] == 1){
+                echo '<a class="pagina-administrator" href="../administrator.php">Pagina administratorului</a>';
+            }
+
+        ?>
+
         <h2>Setarile contului</h2>
 
             <button class="modificari" onclick="schimbare_parola()">Schimbare parola</button>
