@@ -35,9 +35,16 @@ if (isset($_POST['submit'])){
 					$_SESSION['u_email'] = $row['user_email'];
 					$_SESSION['u_uid'] = $row['user_uid'];
 
-					//header("Location: ../logare.php?login=succes");
-					header("Location: ../contul_meu.php");
-					exit();
+					if ($row['user_admin'] == 0){
+						$_SESSION['u_admin'] = 0;
+						header("Location: ../contul_meu.php");
+						exit();
+					} else if ($row['user_admin'] == 1) {
+						$_SESSION['u_admin'] = 1;
+						header("Location: ../contul_meu.php");
+						exit();
+					}
+
 				}
 			}
 		}

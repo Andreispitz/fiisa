@@ -7,6 +7,11 @@
 <link rel="stylesheet" type="text/css" href="b.css">
 <title>OPeM</title>
 <link rel="shortcut icon" href="pen.ico">
+ <meta property="og:url" content="localhost/index.php" /> 
+ <meta property="og:type" content="website" /> 
+ <meta property="og:title" content="Your page title" /> 
+ <meta property="og:description" content="Your page description" /> //Give a short page description here. 
+ <meta property="og:image" content="Your shareable image src" /> //Give your full image source.
 </head>
 
 
