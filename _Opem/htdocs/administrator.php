@@ -11,22 +11,7 @@
   }
   ?>
 
-<?php
 
-  include_once 'includes/db_connection.php';
-
-
-  $sql = "SELECT * FROM petitii WHERE ID = '$id'";
-  $result2 = mysqli_query($conn,$sql);
-  $row2 = mysqli_fetch_array($result2);
-  
-  $id_creator = $row2['id_creator'];
-  $sql2 = "SELECT * FROM users WHERE user_id = '$id_creator'";
-  $result3 = mysqli_query($conn,$sql2);
-  $row3 = mysqli_fetch_array($result3);
-          
-
-?>
 
 <div class="all">
 	<img class="petitie-background" src="logo3.jpg">
@@ -42,14 +27,8 @@
       <span><select id="meniu-adm" name="petitie">
         <option value="">Raport  pentru:</option>
         <option value="">Toate petitiile</option>
-        <?php 
-           $query_c = "SELECT * FROM petitii";
-           $result_c = mysqli_query($conn,$query_c);
-        while($row = mysqli_fetch_array($result_c)){
-          echo '<option value = "' . $row['ID'] .'">' . $row['titlu_petitie'] . '</option>';
-        } 
-          mysqli_close($conn);
-         ?>
+       
+       <?php include_once 'includes/generare_option.php'; ?>
       </select>
       <input type="checkbox" name="PDF" value="1"> PDF</input>
       <input type="checkbox" name="HTML" value="1"> HTML</input></span>
@@ -64,22 +43,16 @@
 				<div class="chenar-administrator">
         <h2 class="ultimele-petitii">selectare petitie</h2>
 
-<form action="" method="POST">
-      <select id="meniu-adm" name="petitie">
-        <option value="">Selectare:</option>
-        <?php 
-             $query = "SELECT * FROM petitii";
-             $result = mysqli_query($conn,$query);
-        while($row = mysqli_fetch_array($result)){
-          echo '<option value = "' . $row['ID'] .'">' . $row['titlu_petitie'] . '</option>';
-        } 
-         ?>
+<form action="administrator.php" method="POST">
+      <select id="meniu-adm" name="petitieid">
+        <option value="0">Selectare:</option>
+   <?php include_once 'includes/generare_option1.php'; ?>
       </select>
       <input type="submit" name="submit" value="Afiseaza">
       </form>
 
 <br>
-
+  <?php include_once 'includes/adm-afis.php'; ?>
 		</div>
 		</div>
 		
