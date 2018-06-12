@@ -26,12 +26,12 @@ if (isset($_POST['submit'])){
 				exit();
 			} else{
 				//Verificam unicitatea user_id-ului
-				$sql = "SELECT * FROM user WHERE user_uid = '$uid'";
+				$sql = "SELECT * FROM users WHERE user_uid = '$uid' OR user_email = '$email'";
 				$result = mysqli_query($conn,$sql);
 				$resultCheck = mysqli_num_rows($result);
 
 				if ($resultCheck > 0){
-					header("Location: ../creare_cont.php?signup=usertaken");
+					header("Location: ../creare_cont.php?signup=userOrEmailTaken");
 					exit();
 				} else {
 					// Hash pentru parola
