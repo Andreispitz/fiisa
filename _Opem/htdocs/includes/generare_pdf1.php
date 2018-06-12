@@ -1,10 +1,17 @@
+
+
+
 <?php 
-if (isset($_POST['raport'])){
+if (isset($_POST['raport']))
+{
+	include_once('fpdf/fpdf.php');
+    include 'db_connection.php';
 	if ($_POST['raport']=='toate'){
-		if($_POST['PDF']=='1'){
-include_once('fpdf/fpdf.php');
-include 'db_connection.php';
-$count="SELECT user_uid,titlu_petitie,destinatar,nr_semnaturi,raportari,data_C,data_e from petitii JOIN users ON id_creator=user_id";
+//pentru toate
+		if (isset($_POST['PDF'])){
+        if($_POST['PDF']==1){
+             //pdf
+        	$count="SELECT user_uid,titlu_petitie,destinatar,nr_semnaturi,raportari,data_C,data_e from petitii JOIN users ON id_creator=user_id";
 $pdf = new FPDF();
 $pdf->AddPage();
 
@@ -39,15 +46,16 @@ $fill = !$fill; // to give alternate background fill  color to rows
 
 mysqli_close($conn);
 $pdf->Output();
+        }}elseif(isset($_POST['HTML'])){
+          echo"<p>HTML toate</p>";
+        }else{
+        header("Location: ../administrator.php");}
 
-}
-if($_POST['HTML']=='1'){
-
-    echo "HTML RAPORT";
-}
-}else if(isset($_POST['raport'])){
-
-$pid=$_POST['raport'];
+	}else{
+//pentru una
+		if (isset($_POST['PDF'])){
+			//PDF PT 1
+			$pid=$_POST['raport'];
 include_once('fpdf/fpdf.php');
 include 'db_connection.php';
 $count="SELECT user_uid,titlu_petitie,destinatar,nr_semnaturi,raportari,data_C,data_e,text_petitie from petitii JOIN users ON id_creator=user_id where ID='$pid'";
@@ -95,11 +103,13 @@ $fill = !$fill; // to give alternate background fill  color to rows
 }
 mysqli_close($conn);
 $pdf->Output();
+		}elseif(isset($_POST['HTML'])){
+          echo"<p>HTML una</p>";
+        }else{
+        header("Location: ../administrator.php");}
 
-
-}else 
-echo "HTML RAPORT";
-
-
+	}
 }
+else
+	header("Location: ../index.php");
 ?>

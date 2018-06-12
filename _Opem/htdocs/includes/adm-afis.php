@@ -23,8 +23,9 @@ echo"<article class='petitie'>
 			<p class='data'>data crearii:".$row['data_C']."</p>
 			<p class='data'>data expirarii:".$row['data_e']."</p>
 			<p class='data'>numar raportari:".$row['raportari']."</p>
-			<form class ='forma_buton' method='get' action='semneaza.html'>
-				<button type='submit' class='catre_semneaza'> sterge</button> </form>			
+			<form class ='forma_buton' method='get' action=''>
+			
+				<a class='catre_semneaza' href='includes/sterge_petitie.php?id=".$row['ID']."&uid=".$_SESSION['u_id']."'> Sterge </a></form>			
 		
 	
 		</article>

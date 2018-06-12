@@ -23,10 +23,9 @@
 		<div class="meniu-admin">
 		<h2 class="ultimele-petitii">Raport</h2>
 
-<form action="includes/generare_pdf.php" method="POST">
-      <span><select id="meniu-adm" name="petitie">
-        <option value="">Raport  pentru:</option>
-        <option value="">Toate petitiile</option>
+<form action="includes/generare_pdf1.php" method="POST">
+      <span><select id="meniu-adm" name="raport">
+        <option value="toate">Toate petitiile</option>
        
        <?php include_once 'includes/generare_option.php'; ?>
       </select>
@@ -53,6 +52,11 @@
 
 <br>
   <?php include_once 'includes/adm-afis.php'; ?>
+  <?php 
+   if(isset($_GET['sters'])){
+    echo"<h3>Petitia a fost stearsa!</h3?";
+   }
+?>
 		</div>
 		</div>
 		

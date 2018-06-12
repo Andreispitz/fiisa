@@ -23,7 +23,7 @@ if (isset($_POST['submit'])){
 				exit();
 				} else{
 				//Verificam unicitatea email
-				$sql = "SELECT * FROM semnaturi WHERE email = '$email'";
+				$sql = "SELECT * FROM semnaturi WHERE email = '$email' AND id_petitie = '$idp'";
 				$result = mysqli_query($conn,$sql);
 				$resultCheck = mysqli_num_rows($result);
 

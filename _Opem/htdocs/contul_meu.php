@@ -72,6 +72,12 @@ numele inputului si id-ul span-ului -->
 
         <div>
             <h2>Petitiile mele</h2>
+            <?php 
+             if(isset($_GET['sters'])){
+    echo"<h3>Petitia a fost stearsa!</h3?";
+   }
+?>
+
 
             <?php
             //Aducerea de baza de date a petitiilor utilizatorului

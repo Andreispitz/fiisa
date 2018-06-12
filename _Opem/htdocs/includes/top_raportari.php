@@ -15,7 +15,7 @@ while($row = mysqli_fetch_array($result))
 
 
 echo"  <tr>
-    <td><a href='semneaza1.php?id=".$row['titlu_petitie']."'>".$row['titlu_petitie']."</a></td>
+    <td><a href='semneaza1.php?id=".$row['ID']."'>".$row['titlu_petitie']."</a></td>
     <td>".$row['raportari']."</td>
   </tr>";
   
