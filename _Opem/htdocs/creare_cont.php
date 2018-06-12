@@ -29,10 +29,9 @@ nume form, numele inputului si id-ul span-ului -->
 			<input type="password" name="pwd" onblur="validare_camp('creare_cont','pwd','field5')">
 			<span id="field5"></span>
 			<br>
-			<button type="submit" name="submit">Creare</button>
+			<button id="buton_login" type="submit" name="submit">Creare</button>
 		</ul>
 	</form>
-
 
 </div>
 
