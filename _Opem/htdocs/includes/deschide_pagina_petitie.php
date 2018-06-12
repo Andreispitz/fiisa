@@ -18,8 +18,10 @@
 					echo"<p class='text_petitie'>". $row['text_petitie'] ."</p>";
 			       echo" <p class='nr_semnaturi'> SEMNATURI:".$row['nr_semnaturi']."</p>
 						<form class='forma_buton' method='get' action=''>";
-						echo'<div class="fb-share-button" data-href="http://127.0.0.1/semneaza1.php?id=' . $idp.'" data-layout="button_count" data-size="large" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Distribuie</a></div> </form>';
-					echo"<a href='semneaza1.php?id=".$idp."&raporteaza=1"."'>raporteaza</a>
+						echo'<div class="fb-share-button" data-href="http://127.0.0.1/semneaza1.php?id=' . $idp.'" data-layout="button" data-size="large" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Distribuie</a></div>
+
+						</form>';
+					echo"<a class='catre_semneaza' href='semneaza1.php?id=".$idp."&raporteaza=1"."'>Raporteaza</a>
 					</article>";
 
 				}
