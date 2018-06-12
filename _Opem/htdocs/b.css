@@ -196,7 +196,9 @@ border-radius: 20px;
 
 .chenar-petitie{
 	background-color: #faf5fd;
-	height: 130%;
+	h.eight: 130%;
+    min-height: 100px;
+    overflow: hidden;
 	margin-top: -15%;
 
 	border: none;
