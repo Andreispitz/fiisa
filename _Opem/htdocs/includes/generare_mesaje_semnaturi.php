@@ -9,10 +9,12 @@ echo"<article class='cmesaj'>
 	$result = mysqli_query($conn,"SELECT * FROM semnaturi where id_petitie=$idp and mesaje is not null");
 	while($row = mysqli_fetch_array($result))
 	{
+        if ($row['mesaje'] != ""){
+        	echo"<p class ='amesaj'>".$row['Nume'].' '.$row['prenume']."</p>
+					<p class='tmesaj'>".$row['mesaje']."</p>
+					<hr> ";
+        }
         
-        echo"<p class ='amesaj'>".$row['Nume'].' '.$row['prenume']."</p>
-<p class='tmesaj'>".$row['mesaje']."</p>
-<hr> ";
 
 				}
 		echo"</article>";
