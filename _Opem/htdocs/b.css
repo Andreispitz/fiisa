@@ -52,120 +52,6 @@ body{
     width: 27%;
  }
 
- @media screen and (max-width: 900px){
-    #table1 tbody tr td a{
-    font-size: 90%;
-}
- }
-
- @media screen and (max-width: 800px){
-    .menu ul li a{
-        font-size: 80%;
-    }
-
-     p.nr_semnaturi{
-        font-size: 80%;
-    }
-
-    input.field-divided::-webkit-input-placeholder{
-        font-size: 50%;
-    }
-
-    #table1 tbody tr th{
-        font-size: 65%;
-    }
-    #table1 tbody tr td{
-        font-size: 85%;
-    }
-}
-
- 
-
- @media screen and (max-width: 700px){
-    p.text2, h3.text2{
-        font-size: 82%;
-    }
-    button.catre_semneaza{
-        font-size: 90%;
-    }
-    button.catre_semneaza:hover{
-        font-size: 90%;
-    }
-    p.text_petitie{
-        font-size: 105%;
-    }
-    label{
-        font-size: 70%;
-    }
-    ul.chestionar1 input[value="Semneaza"]{
-        font-size: 45%;
-        padding:4px 10px 4px 10px;
-    }
-    table#table1{
-        width: 10%;
-    }
-    #table1 tbody tr th{
-        font-size: 65%;
-        text-align: left;
-    }
-    #table1 tbody tr th:nth-child(2){
-        display: none;
-    } /* Semnaturi nu incape in al doilea th , asa ca il sterg si 
-    il afisez cu content la primul th*/
-     #table1 tbody tr th:after{
-        content: ' Semnaturi';
-    }
-     #table1 tbody tr td{
-        font-size: 65%;
-    }
-    div.chenar-petitie{
-        height: 180%;
-    }
- }
-
- @media screen and (max-width: 500px){
-    .menu ul li a{
-        font-size: 60%;
-    }
-
-    p.text2, h3.text2{
-        font-size: 70%;
-    }
-
-    ul.chestionar1 input[value="Semneaza"]{
-        font-size: 45%;
-        padding:2px;
-    }
-
-    label{
-        font-size: 50%;
-    }
-     #table1 tbody tr td{
-        font-size: 55%;
-        padding: 0px
-    } 
-     div.chenar-petitie{
-        width: 120%;
-    }
-    div.menu{
-        width: 80%;
-    }
-    img.petitie-background{
-        width: 120%;
-    }
-    div#login_form form table tbody tr td:nth-child(1){
-        display: block;
-        width: 50px;
-    }
-
- }
-
- @media screen and (max-width: 400px){
-    p.nr_semnaturi{
-        font-size: 60%;
-    }
- }
-
  a{
     color:black;
     font-size: 120%
@@ -514,7 +400,7 @@ background-color: #E9E581;
 
 
 .eroare{
-    color: red;
+    color:red;
 }
 
 .fb-button-center{
@@ -754,4 +640,111 @@ td, th {
 
 tr:nth-child(even) {
     background-color: #dddddd;
+}
+
+@media only screen and (max-width: 450px){
+
+.all{
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
+.menu{
+    width: 100%;
+    left: 0%;
+    position: absolute;
+}
+
+.menu ul{
+    padding-left: 0px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.menu ul li{
+    margin-bottom: 5px;
+}
+
+.menu ul li:nth-child(3){
+
+}
+
+.menu ul li a{
+    padding: 0px;
+    font-size: 100%;
+    display:block;
+}
+
+.divpetitii{
+    width: 100%;
+}
+
+.despre{
+    width: 98%;
+    margin-right: 1%;
+}
+
+.despre h3{
+    margin-top: 10%;
+}
+
+.text_petitie{
+    font-size: 110%;
+    margin-top: 31%;
+}
+
+
+.nr_semnaturi{
+    width: 60%;
+    font-size: 110%;
+    margin-left: 21%;
+}
+
+/* Text de sub cauta*/
+.text2{
+    width: auto;
+    padding-top: 20%;
+}
+
+/*Bara de cautare*/
+#input1{
+    width: 65%;
+}
+
+/*logare.php*/
+#login_form{
+    width: auto;
+    left:15%;
+}
+
+#login_form form#f1{
+    width: auto;
+}
+
+/*contul_meu.php*/
+.contul-meu{
+    width: auto;
+}
+
+#setari_profil ul input{
+    width: 80%;
+}
+
+/*semneaza1.php*/
+.cmesaj{
+    width: 144%;
+    margin-left: 1%;
+}
+
+.tmesaj{
+    margin-bottom: auto;
+    margin-top: -3%;
+}
+
+.fb-button-center{
+    margin-left: 23%;
+}
+
+
+
 }
