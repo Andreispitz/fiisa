@@ -18,14 +18,14 @@ if (isset($_POST['submit'])){
 		$resultCheck = mysqli_num_rows($result);
 
 		if ($resultCheck < 1){
-			header("Location: ../logare.php?login=error");
+			header("Location: ../logare.php?login=ue");
 			exit();
 		} else{
 			if ($row = mysqli_fetch_assoc($result)){
 				$hashedPwdCheck = password_verify($pwd, $row['user_pwd']);
 
 				if ($hashedPwdCheck == false){
-					header("Location: ../logare.php?login=error");
+					header("Location: ../logare.php?login=pass");
 					exit();
 				} elseif($hashedPwdCheck == true){
 					//Utilizatorul se autentifica aici

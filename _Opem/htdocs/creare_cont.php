@@ -32,7 +32,20 @@ nume form, numele inputului si id-ul span-ului -->
 			<button id="buton_login" type="submit" name="submit">Creare</button>
 		</ul>
 	</form>
-
+	<?php
+     if (isset($_GET['signup'])){
+         if($_GET['signup']=='empty')
+           echo"<h3 class='eroare'>Campuri necompletate</h3>";
+            else if($_GET['signup']=='invalid')
+            echo"<h3 class='eroare'>Date incorecte(doar litere in nume si prenume)</h3>";
+            else if($_GET['signup']=='email')
+            echo"<h3 class='eroare'>Email scris gresit</h3>";
+             else if($_GET['signup']=='taken')
+              echo"<h3 class='eroare'>Email sau nume utilizator deja folosite</h3>";  
+              else if($_GET['signup']=='succes')
+              echo"<h3 class='eroare'>Succes!</h3>";     
+}
+?>
 </div>
 
 

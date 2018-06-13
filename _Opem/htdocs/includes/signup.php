@@ -31,7 +31,7 @@ if (isset($_POST['submit'])){
 				$resultCheck = mysqli_num_rows($result);
 
 				if ($resultCheck > 0){
-					header("Location: ../creare_cont.php?signup=userOrEmailTaken");
+					header("Location: ../creare_cont.php?signup=taken");
 					exit();
 				} else {
 					// Hash pentru parola

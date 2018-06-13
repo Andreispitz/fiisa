@@ -38,7 +38,16 @@
                 </table>
             </form>';
             }
+            if (isset($_GET['login'])){
+         if($_GET['login']=='empty')
+           echo"<h3 class='eroare'>Campuri necompletate</h3>";
+            else if($_GET['login']=='ue')
+            echo"<h3 class='eroare'>Nume/email gresit</h3>";
+             else if($_GET['login']=='pass')
+              echo"<h3 class='eroare'>Parola incorecta</h3>";       
+}
         ?> 
+
 </div>
 
 
