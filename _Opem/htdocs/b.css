@@ -420,6 +420,10 @@ background-color: #E9E581;
     color:red;
 }
 
+.sterge_admin{
+    margin-top: 20%;
+}
+
 .catre_semneaza{
     width:100%;
     font-size: 130%;
@@ -509,6 +513,14 @@ background-color: #E9E581;
 }           /* aici se termina formularul creaza*/
 
 
+.eroare{
+    color: red;
+}
+
+.fb-button-center{
+    margin-left: 32%;
+}
+
 
 #login_form {
     position: absolute;
@@ -516,6 +528,17 @@ background-color: #E9E581;
     left: 35%;
     font-size: 20px;
     width: 40%;
+}
+
+#buton_cauta{
+    border-radius: 10px;
+    color:brown;
+}
+
+#buton_cauta:hover{
+    background-color:#B15B41;
+    border-radius: 15px;
+    color:yellow; 
 }
 
 #buton_login
@@ -731,7 +754,4 @@ td, th {
 
 tr:nth-child(even) {
     background-color: #dddddd;
-}
-.eroare{
-    color: red;
 }

@@ -57,7 +57,7 @@ echo"    </div>
       <form  action='cauta.php' method='get'>
           <span><input id='input1' type='text' placeholder='..Cauta..' name='cauta'>
           <input type='checkbox' name='avansata' value='1'>av</input>
-          <input type='submit' name='submit' value='Cauta' />
+          <input id='buton_cauta' type='submit' name='submit' value='Cauta' />
           </span>
       </form>
    </div>
