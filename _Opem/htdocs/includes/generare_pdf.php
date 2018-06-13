@@ -43,7 +43,7 @@ $pdf->Output();
 }
 if($_POST['HTML']=='1'){
 
-    echo "HTML RAPORT";
+    include 'generare_html.php';
 }
 }else if(isset($_POST['raport'])){
 

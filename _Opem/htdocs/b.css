@@ -271,7 +271,7 @@ border-radius: 20px;
     border-radius: 20px;
 }
 #table1{
-    width:90%;
+    width:100%;
     background-color: #EFE5F1;
     border-radius: 20px;
 }
@@ -722,4 +722,13 @@ margin-top: none;
     width: 70%;
     margin-left: 15%;
 
+}
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
 }

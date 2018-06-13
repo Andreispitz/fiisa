@@ -47,7 +47,9 @@ $fill = !$fill; // to give alternate background fill  color to rows
 mysqli_close($conn);
 $pdf->Output();
         }}elseif(isset($_POST['HTML'])){
-          echo"<p>HTML toate</p>";
+          
+          include 'generare_html.php';
+        
         }else{
         header("Location: ../administrator.php");}
 
@@ -104,7 +106,7 @@ $fill = !$fill; // to give alternate background fill  color to rows
 mysqli_close($conn);
 $pdf->Output();
 		}elseif(isset($_POST['HTML'])){
-          echo"<p>HTML una</p>";
+          include 'generare_html1.php';
         }else{
         header("Location: ../administrator.php");}
 
