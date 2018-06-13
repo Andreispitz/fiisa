@@ -13,7 +13,7 @@ echo"<article class='petitie'>
 			
     <div>
 			<p class='text_petitie'>
-".$row['text_petitie']."
+				".$row['text_petitie']."
         
 			</p> 
     </div>
@@ -25,7 +25,7 @@ echo"<article class='petitie'>
 			<p class='data'>numar raportari:".$row['raportari']."</p>
 			<form class ='forma_buton' method='get' action=''>
 			
-				<a class='catre_semneaza' href='includes/sterge_petitie.php?id=".$row['ID']."&uid=".$_SESSION['u_id']."'> Sterge </a></form>			
+				<a class='catre_semneaza sterge_admin' href='includes/sterge_petitie.php?id=".$row['ID']."&uid=".$_SESSION['u_id']."'> Sterge </a></form>			
 		
 	
 		</article>

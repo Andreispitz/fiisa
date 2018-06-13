@@ -7,7 +7,7 @@
         <option value="2">Semnaturi</option>
         <option value="3">Data adaugarii</option>
       </select>
-      <input type="submit" value="Ordoneaza">
+      <input id="buton_login" type="submit" value="Ordoneaza">
       </form>
 <?php
 if (isset($_GET['ordonare'])){
