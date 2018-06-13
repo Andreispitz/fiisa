@@ -1,9 +1,11 @@
 <?php
 if (!empty($_GET['cauta'])){
+	if (empty($_GET['avansata'])){
 	include 'db_connection.php';
 	
 	
 	$cautare=$_GET['cauta'];
+
 	$result = mysqli_query($conn,"SELECT * FROM petitii where titlu_petitie like '%$cautare%'");
 while($row = mysqli_fetch_array($result))
 {
@@ -23,6 +25,10 @@ echo"<article class='petitie'>";
 		}
 
 		mysqli_close($conn);
+
+}else{
+	echo"avansata";
+}
 
 }
 ?>

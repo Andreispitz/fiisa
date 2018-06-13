@@ -27,7 +27,7 @@
       <span><select id="meniu-adm" name="raport">
         <option value="toate">Toate petitiile</option>
        
-       <?php include_once 'includes/generare_option.php'; ?>
+       <?php include_once 'includes/generare_option.php'; ?> 
       </select>
       <input type="checkbox" name="PDF" value="1"> PDF</input>
       <input type="checkbox" name="HTML" value="1"> HTML</input></span>
@@ -66,6 +66,7 @@
 			<div class="cautare">
       <form  action="cauta.php" method="get">
           <span><input id="input1" type="text" placeholder="..Cauta.." name="cauta">
+          <input type="checkbox" name="avansata" value="1">av</input>
           <input type="submit" name="submit" value="Cauta" />
           </span>
       </form>
