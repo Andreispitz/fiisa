@@ -38,9 +38,19 @@
         <input type='submit' name='submit' value='Posteaza' />
     </li>
 </ul>
-</form>
+</form>";
     
-    </div>
+if (isset($_GET['eroare'])){
+if($_GET['eroare']=='empty')
+  echo"<h3>Exista campuri necompletate!</h3>";
+else if($_GET['eroare']=='strlen')
+  echo"<h3>Pentru a fi o petitie valida, campurile trebuie sa contina:</h3>
+   <p>Titlul->15 caractere </p>
+    <p> Destinatarul->10 caractere</p>
+    <p>Textul ->120 caractere</p>";
+}
+
+echo"    </div>
     
 <div class='despre'>
 <div class='cautare'>

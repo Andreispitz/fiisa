@@ -1,7 +1,7 @@
 <?php
 if (isset($_POST['petitieid'])){
 
-$Option = $_POST['petitieid'];
+$Option = mysqli_real_escape_string($conn, $_POST['petitieid']);
 
 $result = mysqli_query($conn,"SELECT * FROM petitii where id=$Option");
 	while($row = mysqli_fetch_array($result))

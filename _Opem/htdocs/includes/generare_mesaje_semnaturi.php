@@ -5,7 +5,7 @@ echo"<article class='cmesaj'>
 <h3 class='ultimele-petitii'>Comentarii</h3>
 <hr>";
 
-	$idp=$_GET['id'];
+	$idp=mysqli_real_escape_string($conn, $_GET['id']);
 	$result = mysqli_query($conn,"SELECT * FROM semnaturi where id_petitie=$idp and mesaje is not null");
 	while($row = mysqli_fetch_array($result))
 	{

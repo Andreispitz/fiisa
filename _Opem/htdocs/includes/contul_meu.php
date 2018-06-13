@@ -70,13 +70,17 @@ numele inputului si id-ul span-ului -->
                 $myId = $_SESSION['u_id'];
                 $result = mysqli_query($conn,"SELECT * FROM petitii WHERE id_creator='$myId'");
                 while ($row = mysqli_fetch_array($result)){
-
+                if(strlen($row['text_petitie'])>199){
+                 $text=substr($row['text_petitie'], 0, 199);
+                 else
+                $text=$row['text_petitie'];
+                    }
                     echo"<article class='petitie'>";
                         echo"<h3 class ='titlu_petitie'>".$row['titlu_petitie']."</h3>";
                         echo"<p class='autor'>Scris de " . $_SESSION['u_uid']. "</p>";
                         echo"<p class='destinatar'>".$row['destinatar']."</p>";
                         
-                        echo"<p class='text_petitie'>". $row['text_petitie'] ."</p>";
+                        echo"<p class='text_petitie'>". "a"."</p>";
                        echo" <p class='nr_semnaturi'> SEMNATURI:".$row['nr_semnaturi']."</p>
                             <form class='forma_buton' method='get' >
                             <a class='catre_semneaza' href='semneaza1.php?id=".$row['ID']."'> Citeste mai mult </a> </form>

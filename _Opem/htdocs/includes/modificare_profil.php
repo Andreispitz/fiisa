@@ -5,10 +5,10 @@ session_start();
 if (isset($_POST['submit'])){
 	include 'db_connection.php';
 
-	$email = $_POST['email'];
-	$first = $_POST['nume'];
-	$last = $_POST['prenume'];
-	$id = $_SESSION['u_id'];
+	$email = mysqli_real_escape_string($conn, $_POST['email']);
+	$first = mysqli_real_escape_string($conn, $_POST['nume']);
+	$last = mysqli_real_escape_string($conn, $_POST['prenume']);
+	$id = mysqli_real_escape_string($conn, $_SESSION['u_id']);
 
 	if (empty($email) || empty($first) || empty($last)){
 		header("Location: ../contul_meu.php?modificare_profil=empty");

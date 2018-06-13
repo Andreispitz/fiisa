@@ -9,17 +9,17 @@ if (isset($_POST['submit'])){
 	$mesaj = mysqli_real_escape_string($conn, $_POST['mesaj']);
 	$idp=mysqli_real_escape_string($conn, $_POST['idp']);
 	if (empty($first) || empty($last) || empty($email)){
-		header("Location: ../creare_cont.php?signup=empty");
+		header("Location: ../semneaza1.php?id=".$idp."&eroareS=empty");
 		exit();
 	} else {
 		//Verificam daca datele introduse sunt corecte
 		if (!preg_match("/^[a-zA-Z]*$/", $first) || !preg_match("/^[a-zA-Z]*$/", $last)){
-			header("Location: ../creare_cont.php?signup=invalid");
+			header("Location: ../semneaza1.php?id=".$idp."&eroareS=invalidnm");
 			exit();
 		} else{
 			//Verificam daca email-ul este valid
 			if (!filter_var($email, FILTER_VALIDATE_EMAIL)){
-				header("Location: ../creare_cont.php?signup=email");
+				header("Location: ../semneaza1.php?id=".$idp."&eroareS=email");
 				exit();
 				} else{
 				//Verificam unicitatea email
@@ -28,7 +28,7 @@ if (isset($_POST['submit'])){
 				$resultCheck = mysqli_num_rows($result);
 
 				if ($resultCheck > 0){
-					header("Location: ../creare_cont.php?signup=multiplesemn");
+					header("Location: ../semneaza1.php?id=".$idp."&eroareS=sx2");
 					exit();
                       }
                       else{
@@ -37,7 +37,7 @@ if (isset($_POST['submit'])){
 							mysqli_query($conn, $sql);
 							$sql1="UPDATE petitii SET nr_semnaturi = 1+nr_semnaturi WHERE ID='$idp';";
 							mysqli_query($conn, $sql1);
-							header("Location: ../index.php");
+							header("Location: ../semneaza1.php?id=".$idp."&eroareS=none");
 
 	
 			exit();

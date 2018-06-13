@@ -104,8 +104,21 @@
                     echo '<input type="hidden" name="idp" value="' . $_GET["id"].' "/> ';
                     echo '<input type="submit" name="submit" value="Semneaza" />';
       }
-
+if (isset($_GET['eroareS'])){
+if($_GET['eroareS']=='invalidnm')
+  echo"<h3>Nume sau prenume invalid!(doar litere)</h3>";
+else if($_GET['eroareS']=='empty')
+    echo"<h3>Campuri necompletate</h3>";
+else if($_GET['eroareS']=='strlen')
+  echo"<h3>Pentru a fi o petitie valida, campurile trebuie sa contina:</h3>
+   <h3>Motiv->30 caractere </h3>";
+   else if($_GET['eroareS']=='sx2')
+     echo"<h3>Ai semnat deja odata!</p></h3>";
+ else if ($_GET['eroareS']=='none')
+echo"<h3>Motiv trimis!</p></h3>";
+}
     ?>
+
 
 		<h3>TOP SEMNATURI</h3>
 	<?php	include 'includes/top_semnaturi.php'; ?>

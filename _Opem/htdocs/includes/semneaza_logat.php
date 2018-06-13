@@ -23,6 +23,6 @@ session_start();
 			mysqli_query($conn, $sql);
 			$sql1="UPDATE petitii SET nr_semnaturi = 1+nr_semnaturi WHERE ID='$idp';";
 			mysqli_query($conn, $sql1);
-			header("Location: ../index.php");
+			header("Location: ../semneaza1.php?id=" . $idp");
 		}
 	}

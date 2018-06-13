@@ -1,12 +1,12 @@
 <?php
 	include 'db_connection.php';
 
-	$idp=$_GET['id'];
+	$idp=mysqli_real_escape_string($conn, $_GET['id']);
 	$result = mysqli_query($conn,"SELECT * FROM petitii where id=$idp");
 	while($row = mysqli_fetch_array($result))
 	{
 
-		$id_creator = $row['id_creator'];
+		$id_creator = mysqli_real_escape_string($conn, $row['id_creator']);
 		$utilizator = mysqli_query($conn,"SELECT * FROM users WHERE user_id='$id_creator'");
 		$utilizatorResult = mysqli_fetch_array($utilizator);
 

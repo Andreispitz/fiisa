@@ -1,5 +1,5 @@
 <?php
-  $pid=$_POST['raport'];
+  $pid=mysqli_real_escape_string($conn, $_POST['raport']);
 include 'db_connection.php';
 $count="SELECT user_uid,titlu_petitie,destinatar,nr_semnaturi,raportari,data_C,data_e,text_petitie from petitii JOIN users ON id_creator=user_id where ID='$pid'";
 echo"
