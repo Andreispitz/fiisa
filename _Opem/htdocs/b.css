@@ -579,6 +579,14 @@ border-bottom: 1px solid black;
     white-space: nowrap;
 }
 
+#make-yellow{
+    background-color: #E9E581;
+}
+
+.login_table tr td{
+    border: 0px;
+}
+
 .meniu-admin
 {
     border:none;
@@ -717,8 +725,12 @@ tr:nth-child(even) {
     left:15%;
 }
 
-#login_form form#f1{
-    width: auto;
+#make-yellow{
+    background-color: red;
+}
+
+td.f1_label{
+    border: 5px solid red;
 }
 
 /*contul_meu.php*/
